@@ -101,6 +101,7 @@ public class OneMaxExperiment {
 			"cpu1",
 			"cpu2"
 		);
+		
 		for (int runLength = MIN_RUN_LENGTH; runLength <= MAX_RUN_LENGTH; runLength *= 10) {
 			
 			for (int i = 0; i < NUM_SAMPLES; i++) {
