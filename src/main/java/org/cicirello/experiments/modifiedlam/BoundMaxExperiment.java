@@ -65,7 +65,7 @@ public class BoundMaxExperiment {
 	 */
     public static void main(String[] args) {
 		final int NUM_SAMPLES = 100;
-		final int N = 672;
+		final int N = 650;
 		final int B = 127;
 		final int MIN_RUN_LENGTH = 10000;
 		final int MAX_RUN_LENGTH = 1000000;
