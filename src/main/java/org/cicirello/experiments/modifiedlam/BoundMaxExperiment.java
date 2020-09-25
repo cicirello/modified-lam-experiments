@@ -64,9 +64,9 @@ public class BoundMaxExperiment {
 	 * @param args There are no command line arguments.
 	 */
     public static void main(String[] args) {
-		final int NUM_SAMPLES = 10;
+		final int NUM_SAMPLES = 100;
 		final int N = 672;
-		final int B = 100;
+		final int B = 127;
 		final int MIN_RUN_LENGTH = 10000;
 		final int MAX_RUN_LENGTH = 1000000;
 		
@@ -105,10 +105,11 @@ public class BoundMaxExperiment {
 			"cpu1",
 			"cpu2"
 		);
+		
 		for (int runLength = MIN_RUN_LENGTH; runLength <= MAX_RUN_LENGTH; runLength *= 10) {
 			
-				for (int i = 0; i < NUM_SAMPLES; i++) {
-					SimulatedAnnealing<IntegerVector> sa1 = new SimulatedAnnealing<IntegerVector>(
+			for (int i = 0; i < NUM_SAMPLES; i++) {
+				SimulatedAnnealing<IntegerVector> sa1 = new SimulatedAnnealing<IntegerVector>(
 					problem, 
 					new UndoableRandomValueChangeMutation<IntegerVector>(0, B, P, K),
 					(Initializer<IntegerVector>)problem.split(),
