@@ -133,7 +133,31 @@ if __name__ == "__main__" :
 
     print("Statistical Analysis:", datafile)
     if annealOnly :
-        pass
+        print("{0:7s}\t{1:4s}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}".format(
+            "L",
+            "R",
+            "muT1",
+            "muT2",
+            "devT1",
+            "devT2",
+            "N",
+            "t-cpu", "dof"))
+        for key in sorted(lengthMap.keys()) :
+            muCpu1 = statistics.mean(lengthMap[key].cpu1)
+            muCpu2 = statistics.mean(lengthMap[key].cpu2)
+            stdevCpu1 = statistics.stdev(lengthMap[key].cpu1)
+            stdevCpu2 = statistics.stdev(lengthMap[key].cpu2)
+            n = len(lengthMap[key].cpu1)
+            cpuT, cpuDOF = tTestWelch(muCpu1, muCpu2, stdevCpu1, stdevCpu2, n, n)
+            print("{0:7d}\t{1:4d}\t{2:.5f}\t{3:.5f}\t{4:.5f}\t{5:.5f}\t{6:3d}\t{7:.2f}\t{8:3d}".format(
+                key[0],
+                key[1],
+                muCpu1,
+                muCpu2,
+                stdevCpu1,
+                stdevCpu2,
+                n,
+                cpuT, cpuDOF))
     else :
         print("{0:9s}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}\t{12}\t{13}".format(
             "L",
