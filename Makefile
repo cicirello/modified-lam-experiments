@@ -4,6 +4,8 @@ else
 	py = "python3"
 endif
 
+pathToDataFiles = "data/"
+
 .PHONY: build
 build:
 	mvn compile
@@ -18,10 +20,11 @@ experiments:
 	
 .PHONY: analysis
 analysis:
-	$(py) src/analysis/experimentstats.py data/onemax.txt
-	$(py) src/analysis/experimentstats.py data/boundmax.txt
-	$(py) src/analysis/experimentstats.py data/haystack.txt
-	$(py) src/analysis/experimentstats.py data/roots.txt float
+	$(py) src/analysis/experimentstats.py ${pathToDataFiles}onemax.txt > stats.txt
+	$(py) src/analysis/experimentstats.py ${pathToDataFiles}boundmax.txt >> stats.txt
+	$(py) src/analysis/experimentstats.py ${pathToDataFiles}haystack.txt >> stats.txt
+	$(py) src/analysis/experimentstats.py ${pathToDataFiles}roots.txt float >> stats.txt
+	$(py) src/analysis/experimentstats.py ${pathToDataFiles}anneal.txt anneal >> stats.txt
 
 .PHONY: clean
 clean:
