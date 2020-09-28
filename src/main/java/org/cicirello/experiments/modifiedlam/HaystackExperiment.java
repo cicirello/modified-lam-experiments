@@ -71,6 +71,7 @@ public class HaystackExperiment {
 	 * @param args There are no command line arguments.
 	 */
     public static void main(String[] args) {
+		final int WARMUP_NUM_SAMPLES = 10;
 		final int NUM_SAMPLES = 100;
 		final int N = 800;
 		final int MIN_RUN_LENGTH = 10000;
@@ -83,7 +84,7 @@ public class HaystackExperiment {
 		
 		// Warm up JVM prior to timing alternatives
 		// The warm up phase uses the longest run length.
-		for (int i = 0; i < NUM_SAMPLES; i++) {
+		for (int i = 0; i < WARMUP_NUM_SAMPLES; i++) {
 			SimulatedAnnealing<Permutation> sa1 = new SimulatedAnnealing<Permutation>(
 				problem, 
 				new SwapMutation(),

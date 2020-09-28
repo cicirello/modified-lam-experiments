@@ -62,6 +62,7 @@ public class RootFindingExperiment {
 	 * @param args There are no command line arguments.
 	 */
     public static void main(String[] args) {
+		final int WARMUP_NUM_SAMPLES = 10;
 		final int NUM_SAMPLES = 100;
 		final int MIN_RUN_LENGTH = 100000;
 		final int MAX_RUN_LENGTH = 100000000;
@@ -77,7 +78,7 @@ public class RootFindingExperiment {
 		
 		// Warm up JVM prior to timing alternatives
 		// The warm up phase uses the longest run length.
-		for (int i = 0; i < NUM_SAMPLES; i++) {
+		for (int i = 0; i < WARMUP_NUM_SAMPLES; i++) {
 			SimulatedAnnealing<SingleReal> sa1 = new SimulatedAnnealing<SingleReal>(
 				problem, 
 				mutation.split(),

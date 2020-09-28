@@ -62,6 +62,7 @@ public class OneMaxExperiment {
 	 * @param args There are no command line arguments.
 	 */
     public static void main(String[] args) {
+		final int WARMUP_NUM_SAMPLES = 10;
 		final int NUM_SAMPLES = 100;
 		final int N = 20480;
 		final int MIN_RUN_LENGTH = 10000;
@@ -72,7 +73,7 @@ public class OneMaxExperiment {
 		
 		// Warm up JVM prior to timing alternatives
 		// The warm up phase uses the longest run length.
-		for (int i = 0; i < NUM_SAMPLES; i++) {
+		for (int i = 0; i < WARMUP_NUM_SAMPLES; i++) {
 			SimulatedAnnealing<BitVector> sa1 = new SimulatedAnnealing<BitVector>(
 				problem, 
 				new DefiniteBitFlipMutation(MAX_BITS_MUTATE),

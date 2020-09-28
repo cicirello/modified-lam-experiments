@@ -64,6 +64,7 @@ public class BoundMaxExperiment {
 	 * @param args There are no command line arguments.
 	 */
     public static void main(String[] args) {
+		final int WARMUP_NUM_SAMPLES = 10;
 		final int NUM_SAMPLES = 100;
 		final int N = 650;
 		final int B = 127;
@@ -76,7 +77,7 @@ public class BoundMaxExperiment {
 		
 		// Warm up JVM prior to timing alternatives
 		// The warm up phase uses the longest run length.
-		for (int i = 0; i < NUM_SAMPLES; i++) {
+		for (int i = 0; i < WARMUP_NUM_SAMPLES; i++) {
 			SimulatedAnnealing<IntegerVector> sa1 = new SimulatedAnnealing<IntegerVector>(
 				problem, 
 				new UndoableRandomValueChangeMutation<IntegerVector>(0, B, P, K),
