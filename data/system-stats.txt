@@ -1,0 +1,15 @@
+OS: Windows 10
+CPU: AMD A10-5700, 3.4 GHz
+Memory: 8 GB DDR3
+
+Experiment programs
+Compiler: OpenJDK 11.0.8
+Target: Java 11
+VM: OpenJDK 64-bit Server VM (build 11.0.8+10)
+
+Chips-n-Salsa library
+Release: 2.2.0 (downloaded from Maven Central)
+Compiler: OpenJDK 11 64-bit (compiled via Github Actions just prior to release)
+Target: Java 8
+
+
