@@ -19,25 +19,7 @@
 import math
 import statistics
 import sys
-
-def tTestWelch(mu1, mu2, stdev1, stdev2, n1, n2) :
-    """Computes Welch's t-test, and returns (t, v) where t is
-    the t statistic, and v is the degrees of freedom.
-
-    Keyword arguments:
-    mu1 - The mean of dataset 1.
-    mu2 - The mean of dataset 2.
-    stdev1 - The standard deviation of dataset 1.
-    stdev2 - The standard deviation of dataset 2.
-    n1 - The number of samples in dataset 1.
-    n2 - The number of samples in dataset 2.
-    """
-    s1 = stdev1 * stdev1 / n1
-    s2 = stdev2 * stdev2 / n2
-    x = s1 + s2
-    t = (mu1 - mu2) / math.sqrt(x)
-    v = x * x / ( s1*s1/(n1-1) + s2*s2/(n2-1))
-    return t, int(v)
+import scipy.stats
 
 class data :
     """Summarizes the data associated with one run length."""
@@ -141,15 +123,24 @@ if __name__ == "__main__" :
             "devT1",
             "devT2",
             "N",
-            "t-cpu", "dof"))
+            "t-cpu",
+            "P-cpu"))
+        outputTemplate = "{0:7d}\t{1:4d}\t{2:.5f}\t{3:.5f}\t{4:.5f}\t{5:.5f}\t{6:3d}\t{7:.2f}\t{8:.2g}"
         for key in sorted(lengthMap.keys()) :
             muCpu1 = statistics.mean(lengthMap[key].cpu1)
             muCpu2 = statistics.mean(lengthMap[key].cpu2)
             stdevCpu1 = statistics.stdev(lengthMap[key].cpu1)
             stdevCpu2 = statistics.stdev(lengthMap[key].cpu2)
             n = len(lengthMap[key].cpu1)
-            cpuT, cpuDOF = tTestWelch(muCpu1, muCpu2, stdevCpu1, stdevCpu2, n, n)
-            print("{0:7d}\t{1:4d}\t{2:.5f}\t{3:.5f}\t{4:.5f}\t{5:.5f}\t{6:3d}\t{7:.2f}\t{8:3d}".format(
+            cpuTTest = scipy.stats.ttest_ind_from_stats(
+                mean1=muCpu1,
+                std1=stdevCpu1,
+                nobs1=n,
+                mean2=muCpu2,
+                std2=stdevCpu2,
+                nobs2=n,
+                equal_var=False)
+            print(outputTemplate.format(
                 key[0],
                 key[1],
                 muCpu1,
@@ -157,7 +148,8 @@ if __name__ == "__main__" :
                 stdevCpu1,
                 stdevCpu2,
                 n,
-                cpuT, cpuDOF))
+                cpuTTest.statistic,
+                cpuTTest.pvalue))
     else :
         print("{0:9s}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}\t{12}\t{13}".format(
             "L",
@@ -170,8 +162,14 @@ if __name__ == "__main__" :
             "devT1",
             "devT2",
             "N",
-            "t-cost", "dof",
-            "t-cpu", "dof"))
+            "t-cost",
+            "P-cost",
+            "t-cpu",
+            "P-cpu"))
+        if floatValued :
+            outputTemplate = "{0:9d}\t{1:.5f}\t{2:.5f}\t{3:.3f}\t{4:.3f}\t{5:.5f}\t{6:.5f}\t{7:.5f}\t{8:.5f}\t{9:3d}\t{10:.2f}\t{11:.2f}\t{12:.2f}\t{13:.2g}"
+        else :
+            outputTemplate = "{0:9d}\t{1:.2f}\t{2:.2f}\t{3:.3f}\t{4:.3f}\t{5:.4f}\t{6:.4f}\t{7:.5f}\t{8:.5f}\t{9:3d}\t{10:.2f}\t{11:.2f}\t{12:.2f}\t{13:.2g}"
         for key in sorted(lengthMap.keys()) :
             muCost1 = statistics.mean(lengthMap[key].cost1)
             muCost2 = statistics.mean(lengthMap[key].cost2)
@@ -182,34 +180,35 @@ if __name__ == "__main__" :
             stdevCpu1 = statistics.stdev(lengthMap[key].cpu1)
             stdevCpu2 = statistics.stdev(lengthMap[key].cpu2)
             n = len(lengthMap[key].cost2)
-            costT, costDOF = tTestWelch(muCost1, muCost2, stdevCost1, stdevCost2, n, n)
-            cpuT, cpuDOF = tTestWelch(muCpu1, muCpu2, stdevCpu1, stdevCpu2, n, n)
-            if floatValued :
-                print("{0:9d}\t{1:.5f}\t{2:.5f}\t{3:.3f}\t{4:.3f}\t{5:.5f}\t{6:.5f}\t{7:.5f}\t{8:.5f}\t{9:3d}\t{10:.2f}\t{11}\t{12:.2f}\t{13}".format(
-                    key,
-                    muCost1,
-                    muCost2,
-                    muCpu1,
-                    muCpu2,
-                    stdevCost1,
-                    stdevCost2,
-                    stdevCpu1,
-                    stdevCpu2,
-                    n,
-                    costT, costDOF,
-                    cpuT, cpuDOF))
-            else :
-                print("{0:9d}\t{1:.2f}\t{2:.2f}\t{3:.3f}\t{4:.3f}\t{5:.4f}\t{6:.4f}\t{7:.5f}\t{8:.5f}\t{9:3d}\t{10:.2f}\t{11}\t{12:.2f}\t{13}".format(
-                    key,
-                    muCost1,
-                    muCost2,
-                    muCpu1,
-                    muCpu2,
-                    stdevCost1,
-                    stdevCost2,
-                    stdevCpu1,
-                    stdevCpu2,
-                    n,
-                    costT, costDOF,
-                    cpuT, cpuDOF))
+            costTTest = scipy.stats.ttest_ind_from_stats(
+                mean1=muCost1,
+                std1=stdevCost1,
+                nobs1=n,
+                mean2=muCost2,
+                std2=stdevCost2,
+                nobs2=n,
+                equal_var=False)
+            cpuTTest = scipy.stats.ttest_ind_from_stats(
+                mean1=muCpu1,
+                std1=stdevCpu1,
+                nobs1=n,
+                mean2=muCpu2,
+                std2=stdevCpu2,
+                nobs2=n,
+                equal_var=False)
+            print(outputTemplate.format(
+                key,
+                muCost1,
+                muCost2,
+                muCpu1,
+                muCpu2,
+                stdevCost1,
+                stdevCost2,
+                stdevCpu1,
+                stdevCpu2,
+                n,
+                costTTest.statistic,
+                costTTest.pvalue,
+                cpuTTest.statistic,
+                cpuTTest.pvalue))
     print()
