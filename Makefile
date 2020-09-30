@@ -20,6 +20,7 @@ experiments:
 	
 .PHONY: analysis
 analysis:
+	$(py) -m pip install --user scipy
 	$(py) src/analysis/experimentstats.py ${pathToDataFiles}onemax.txt > stats.txt
 	$(py) src/analysis/experimentstats.py ${pathToDataFiles}boundmax.txt >> stats.txt
 	$(py) src/analysis/experimentstats.py ${pathToDataFiles}haystack.txt >> stats.txt
