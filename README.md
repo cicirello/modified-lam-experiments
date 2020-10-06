@@ -23,5 +23,19 @@ You can build the experiment programs in one of the following ways:
 
 ## Running the Experiments
 
-Once you have successfully executed the build above, you can run the experiments by executing `make experiments` at the root of the repository. This will run each of the experiment programs in sequence, with the results piped to text files in the root of the project. The output from my runs are found in the [/data](data) directory. 
+Once you have successfully executed the build above, you can run the 
+experiments by executing `make experiments` at the root of the 
+repository. This will run each of the experiment programs in sequence, 
+with the results piped to text files in the root of the project. The 
+output from my runs are found in the [/data](data) directory. 
+
+## Analyzing the Experimental Data
+
+To run the Python program that I used to generate summary statistics 
+and run significance tests, you need Python 3 installed. To run that
+Python program, execute `make analysis` in the root of the project. This
+assumes that you have run the experiments above, and that the output
+of the experiments is in the root of the project. If you want to simply
+run it against the result of my runs, then change the variable
+`pathToDataFiles = "data/"` in the `Makefile`.  
 
