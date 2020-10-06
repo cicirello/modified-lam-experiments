@@ -43,12 +43,17 @@ You can find these 5 files from my runs of the experiments in the [/data](data) 
 ## Analyzing the Experimental Data
 
 To run the Python program that I used to generate summary statistics 
-and run significance tests, you need Python 3 installed. To run that
+and run significance tests, you need Python 3 installed. The source code
+of this Python program is found in the [src/analysis](src/analysis) directory,
+and consists of a single Python file `experimentstats.py`.  To run that
 Python program, execute `make analysis` in the root of the project. This
 assumes that you have run the experiments above, and that the output
 of the experiments is in the root of the project. If you want to simply
 run it against the result of my runs, then change the variable
-`pathToDataFiles = "data/"` in the `Makefile`.  
+`pathToDataFiles = "data/"` in the `Makefile`.  Executing the `Makefile` in this
+way will also take care of installing `scipy` if you don't already have it installed,
+and will pass the appropriate command line parameters to the Python program
+for each of the data files.  
 
 The output of this analysis program is piped to a file `stats.txt` in the
 root of the project. This file from my run of the experiments is found
