@@ -27,7 +27,16 @@ Once you have successfully executed the build above, you can run the
 experiments by executing `make experiments` at the root of the 
 repository. This will run each of the experiment programs in sequence, 
 with the results piped to text files in the root of the project. The 
-output from my runs are found in the [/data](data) directory. 
+output from my runs are found in the [/data](data) directory.
+
+The experiments produce 5 text files with data:
+* `anneal.txt`: This has data comparing the two versions of the annealing schedule independent from Simulated Annealing.
+* `onemax.txt`: This has results from a comparison on the OneMax problem.
+* `boundmax.txt`: This has results from a comparison on the BoundMax problem.
+* `haystack.txt`: This has results from a comparison on the Permutation in a Haystack problem.
+* `roots.txt`: This has results from a comparison on a Polynomial Root Finding problem.
+
+You can find these 5 files from my runs of the experiments in the [/data](data) directory.
 
 ## Analyzing the Experimental Data
 
@@ -38,4 +47,17 @@ assumes that you have run the experiments above, and that the output
 of the experiments is in the root of the project. If you want to simply
 run it against the result of my runs, then change the variable
 `pathToDataFiles = "data/"` in the `Makefile`.  
+
+The output of this analysis program is piped to a file `stats.txt` in the
+root of the project. This file from my run of the experiments is found
+in the [/data](data) directory.
+
+## Other Files in the Repository
+
+There are a few other files, potentially of interest, in the repository,
+which include:
+* `system-stats.txt`: This file contains details of the system I used to run the experiments, such as operating system, processor specs, Java JDK and VM.  It is in the [/data](data) directory.
+* `graphs.xlsx`: An Excel spreadsheet used to generate the graphs of the paper.  It is also in the [/data](data) directory.
+* [/data/figures](data/figures) directory: This is probably of less interest to someone other than me. It contains the figures of the paper in eps format, along with some intermediate formats.
+
 
