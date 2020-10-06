@@ -4,7 +4,7 @@ else
 	py = "python3"
 endif
 
-pathToDataFiles = "data/"
+pathToDataFiles = ""
 
 .PHONY: build
 build:
