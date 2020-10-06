@@ -17,7 +17,9 @@ To build and run the experiments on your own machine, you will need the followin
 
 ## Building the Experiment's Java Programs
 
-You can build the experiment programs in one of the following ways:
+The source code of the Java programs, implementing the experiments
+is in the [src/main](src/main) directory.  You can build the experiment 
+programs in one of the following ways:
 * Execute `mvn compile` at the root of the repository.
 * Execute `make` or `make build` at the root of the repository (which simply executes a `mvn compile`). 
 
