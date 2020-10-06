@@ -23,6 +23,10 @@ programs in one of the following ways:
 * Execute `mvn compile` at the root of the repository.
 * Execute `make` or `make build` at the root of the repository (which simply executes a `mvn compile`). 
 
+This produces 5 Java programs for running different parts of the experiments. If you are 
+unfamiliar with the usual structure of the directories of a Java project built with Maven,
+the `.class` files, etc will be found in a `target` directory that is created by the build process.
+
 ## Running the Experiments
 
 Once you have successfully executed the build above, you can run the 
