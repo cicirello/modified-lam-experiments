@@ -15,4 +15,9 @@ To build and run the experiments on your own machine, you will need the followin
 * __Python 3__: The repository contains a Python program that was used to compute summary statistics, as well as statistical significance tests. If you want to run this Python program, you will need Python 3. I specifically used Python 3.8.2.
 * __Make__: The repository also contains a Makefile to simplify running the build, running the experiment's Java programs, and running the Python program to analyze the data. If you are familiar with using the Maven build tool, and running Python programs, then you can just run these directly, although the Makefile may be useful to see the specific commands needed.
 
+## Building the Experiment's Java Programs
+
+You can build the experiment programs in one of the following ways:
+* Execute `mvn compile` at the root of the repository.
+* Execute `make` or `make build` at the root of the repository (which simply executes a `mvn compile`). 
 
