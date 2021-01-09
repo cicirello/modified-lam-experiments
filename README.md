@@ -8,6 +8,10 @@ experimental data, from the following paper:
 > Vincent A. Cicirello. 2020. Optimizing the Modified Lam Annealing Schedule. *Industrial
 Networks and Intelligent Systems*, 7(25), Article e1 (December 2020). https://doi.org/10.4108/eai.16-12-2020.167653.
 
+| __Related Publication:__ | [![DOI](doi.svg)](https://doi.org/10.4108/eai.16-12-2020.167653) |
+| :--- | :--- |
+| __Source Info__ | [![GitHub](https://img.shields.io/github/license/cicirello/modified-lam-experiments)](https://github.com/cicirello/modified-lam-experiments/blob/master/LICENSE) |
+
 ## Requirements to Build and Run the Experiments
 
 To build and run the experiments on your own machine, you will need the following:
