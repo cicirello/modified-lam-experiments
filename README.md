@@ -3,9 +3,11 @@
 Copyright &copy; 2020 Vincent A. Cicirello
 
 This repository contains code to reproduce the experiments, and analysis of 
-experimental data, from the following paper (currently under review):
+experimental data, from the following paper:
 
-> Cicirello, V. A., (2020). Optimizing the Modified Lam Annealing Schedule.
+> Vincent A. Cicirello. 2020. Optimizing the Modified Lam Annealing Schedule. *Industrial
+Networks and Intelligent Systems*, 7(25), Article e1 (December 2020). https:
+//doi.org/10.4108/eai.16-12-2020.167653.
 
 ## Requirements to Build and Run the Experiments
 
