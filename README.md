@@ -10,7 +10,7 @@ Networks and Intelligent Systems*, 7(25), Article e1 (December 2020). https://do
 
 | __Related Publication:__ | [![DOI](doi.svg)](https://doi.org/10.4108/eai.16-12-2020.167653) |
 | :--- | :--- |
-| __Source Info__ | [![GitHub](https://img.shields.io/github/license/cicirello/modified-lam-experiments)](https://github.com/cicirello/modified-lam-experiments/blob/master/LICENSE) |
+| __Source Info:__ | [![GitHub](https://img.shields.io/github/license/cicirello/modified-lam-experiments)](https://github.com/cicirello/modified-lam-experiments/blob/master/LICENSE) |
 
 ## Requirements to Build and Run the Experiments
 
