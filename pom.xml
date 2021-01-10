@@ -1,91 +1,201 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	<groupId>org.cicirello</groupId>
+	<artifactId>modified-lam-experiments</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 
-  <groupId>org.cicirello</groupId>
-  <artifactId>modified-lam-experiments</artifactId>
-  <version>0.1.0</version>
+	<name>modified-lam-experiments</name>
+	
+	<description>This package contains Java programs for reproducing the 
+	experiments, and analysis of experimental data, from the following 
+	journal article: Vincent A. Cicirello. 2020. Optimizing the Modified 
+	Lam Annealing Schedule. Industrial Networks and Intelligent Systems, 
+	7(25), Article e1 (December 2020). 
+	https://doi.org/10.4108/eai.16-12-2020.167653. 
+	The full text of this article is also available at:
+	https://www.cicirello.org/publications/eai.16-12-2020.167653.pdf.</description>
+	
+	<url>https://github.com/cicirello/modified-lam-experiments</url>
+	
+	<licenses>
+		<license>
+		<name>GPL-3.0-or-later</name>
+		<url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+		<distribution>repo</distribution>
+		<comments>
+		Experiments with the original version, and optimized version, of 
+		the Modified Lam annealing schedule. 
+		Copyright (C) 2020  Vincent A. Cicirello.
+ 
+		This program is free software: you can redistribute it and/or modify
+		it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
 
-  <name>modified-lam-experiments</name>
-  <url>https://github.com/cicirello/modified-lam-experiments</url>
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>11</maven.compiler.release>
-  </properties>
+		You should have received a copy of the GNU General Public License
+		along with this program.  If not, see https://www.gnu.org/licenses/.
+		</comments>
+		</license>
+	</licenses>
+	
+	<developers>
+		<developer>
+			<name>Vincent A Cicirello</name>
+			<email>development@cicirello.org</email>
+			<url>https://www.cicirello.org/</url>
+			<organization>Cicirello.Org</organization>
+			<organizationUrl>https://www.cicirello.org/</organizationUrl>
+		</developer>
+	</developers>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13</version>
-      <scope>test</scope>
-    </dependency>
-	<dependency>
-      <groupId>org.cicirello</groupId>
-      <artifactId>chips-n-salsa</artifactId>
-      <version>2.2.0</version>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version>
-          <configuration>
-            <release>11</release>
-            <compilerArgument>-Xlint:unchecked</compilerArgument>
-          </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0-M5</version>
-          <configuration>
-            <includes>
-              <include>**/*TestCases.java</include>
-              <include>**/*Tests.java</include>
-              <include>**/*TestCase.java</include>
-              <include>**/*Test.java</include>
-              <include>**/Test*.java</include>
-            </includes>
-          </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.7.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
+	<organization>
+		<name>Cicirello.Org</name>
+		<url>https://www.cicirello.org/</url>
+	</organization>	
+	
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/cicirello/modified-lam-experiments/issues</url>
+	</issueManagement>
+	
+	<scm>
+		<connection>scm:git:git://github.com/cicirello/modified-lam-experiments.git</connection>
+		<developerConnection>scm:git:ssh://github.com:cicirello/modified-lam-experiments.git</developerConnection>
+		<url>http://github.com/cicirello/modified-lam-experiments/tree/master</url>
+	</scm>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.cicirello</groupId>
+			<artifactId>chips-n-salsa</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+	</dependencies>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.release>11</maven.compiler.release>
+	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>11</release>
+					<compilerArgument>-Xlint:unchecked</compilerArgument>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<windowtitle>Experiments with an optimized version of 
+					the Modified Lam annealing schedule.</windowtitle>
+					<doctitle>Experiments with an optimized version of 
+					the Modified Lam annealing schedule.</doctitle>
+					<author>true</author>
+					<version>false</version>
+					<notimestamp>true</notimestamp>
+					<bottom><![CDATA[Copyright &copy; 2020 <a href=\"https://www.cicirello.org/\" target=_top>Vincent A. Cicirello</a>.  All rights reserved.]]></bottom>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<profiles>
+		<profile>
+			<id>ossrhDeploy</id>
+			<distributionManagement>
+				<repository>
+					<id>ossrh</id>
+					<name>Central Repository OSSRH</name>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<name>Central Repository OSSRH</name>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.8</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<configuration>
+									<gpgArguments>
+										<arg>--pinentry-mode</arg>
+										<arg>loopback</arg>
+									</gpgArguments>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>githubDeploy</id>
+			<distributionManagement>
+				<repository>
+					<id>github</id>
+					<name>GitHub cicirello Apache Maven Packages</name>
+					<url>https://maven.pkg.github.com/cicirello/modified-lam-experiments</url>
+				</repository>
+			</distributionManagement>
+		</profile>
+	</profiles>	
 </project>
