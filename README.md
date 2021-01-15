@@ -11,6 +11,7 @@ Networks and Intelligent Systems*, 7(25), Article e1 (December 2020). https://do
 | __Related Publication:__ | [![DOI](doi.svg)](https://doi.org/10.4108/eai.16-12-2020.167653) |
 | :--- | :--- |
 | __Source Info:__ | [![GitHub](https://img.shields.io/github/license/cicirello/modified-lam-experiments)](https://github.com/cicirello/modified-lam-experiments/blob/master/LICENSE) |
+| __Packages and Releases__ | [![Maven Central](https://img.shields.io/maven-central/v/org.cicirello/modified-lam-experiments.svg?label=Maven%20Central)](https://search.maven.org/artifact/org.cicirello/modified-lam-experiments) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/cicirello/modified-lam-experiments?logo=GitHub)](https://github.com/cicirello/modified-lam-experiments/releases) |
 
 ## Requirements to Build and Run the Experiments
 
