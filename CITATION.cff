@@ -1,0 +1,22 @@
+cff-version: "1.1.0"
+message: "If you use this software, please cite it using these metadata."
+authors: 
+- family-names: "Cicirello"
+  given-names: "Vincent A"
+  orcid: "https://orcid.org/0000-0003-1072-8559"
+title: "modified-lam-experiments"
+license: "GPL-3.0-or-later"
+url: "https://github.com/cicirello/modified-lam-experiments"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Cicirello"
+    given-names: "Vincent A"
+    orcid: "https://orcid.org/0000-0003-1072-8559"
+  doi: "10.4108/eai.16-12-2020.167653"
+  journal: "Industrial Networks and Intelligent Systems"
+  title: "Optimizing the Modified Lam Annealing Schedule"
+  issue: 25
+  volume: 7
+  year: 2020
+  month: "December"
