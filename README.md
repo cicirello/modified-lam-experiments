@@ -11,7 +11,7 @@ Networks and Intelligent Systems*, 7(25), Article e1 (December 2020). https://do
 | __Related Publication:__ | [![DOI](doi.svg)](https://doi.org/10.4108/eai.16-12-2020.167653) |
 | :--- | :--- |
 | __Source Info:__ | [![GitHub](https://img.shields.io/github/license/cicirello/modified-lam-experiments)](https://github.com/cicirello/modified-lam-experiments/blob/master/LICENSE) |
-| __Packages and Releases:__ | [![Maven Central](https://img.shields.io/maven-central/v/org.cicirello/modified-lam-experiments.svg?label=Maven%20Central)](https://central.sonatype.com/search?namespace=org.cicirello&q=modified-lam-experiments) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/cicirello/modified-lam-experiments?logo=GitHub)](https://github.com/cicirello/modified-lam-experiments/releases) |
+| __Packages and Releases:__ | [![Maven Central](https://img.shields.io/maven-central/v/org.cicirello/modified-lam-experiments.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/org.cicirello/modified-lam-experiments/) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/cicirello/modified-lam-experiments?logo=GitHub)](https://github.com/cicirello/modified-lam-experiments/releases) |
 
 ## Requirements to Build and Run the Experiments
 
@@ -36,7 +36,7 @@ the `.class` files, etc will be found in a `target` directory that is created by
 ## Downloading a Prebuilt Jar of the Experiment's Java Programs
 
 For convenience, a prebuilt jar file of the experiment's Java programs
-is available in the [Maven Central Repository](https://search.maven.org/artifact/org.cicirello/modified-lam-experiments). I have
+is available in the [Maven Central Repository](https://central.sonatype.com/artifact/org.cicirello/modified-lam-experiments/). I have
 provided an alternate to the Maven `pom.xml` file, `pom-get-from-central.xml`, which can
 be used to download the prebuilt jar. Use it in one of the following ways:
 * Execute `mvn -f pom-get-from-central.xml clean dependency:copy-dependencies` at the root of the repository.
