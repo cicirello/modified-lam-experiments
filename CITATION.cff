@@ -1,5 +1,5 @@
-cff-version: "1.1.0"
-message: "If you use this software, please cite it using these metadata."
+cff-version: "1.2.0"
+message: "If you use this software, please cite the article in preferred-citation."
 authors: 
 - family-names: "Cicirello"
   given-names: "Vincent A"
@@ -19,4 +19,4 @@ preferred-citation:
   issue: 25
   volume: 7
   year: 2020
-  month: "December"
+  month: 12
